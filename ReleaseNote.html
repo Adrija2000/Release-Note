@@ -13,7 +13,7 @@
       font-family: Arial, sans-serif;
       background-color: #ffffff;
       color: #333;
-      line-height: 1.3;
+      line-height: 1.4;
       display: flex;
       flex-direction: column;
     }
@@ -27,7 +27,7 @@
     }
 
     header {
-      background: #fdffff;
+      background: linear-gradient(90deg, #f9fbfb, #ffffff);
       color: rgb(8, 8, 8);
       padding: 15px;
     }
@@ -82,18 +82,36 @@
       justify-items: center;
     }
     .image-grid img {
-      max-width: 90%;
+      width: 100%;
+      max-width: 350px;   /* same width */
+      height: 200px;      /* same height */
+      object-fit: contain; /* maintain aspect ratio */
       border: 1px solid #ccc;
       border-radius: 5px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+      background: #fff;   /* fill space with white */
+    }
+    .image-grid img:hover {
+      transform: scale(1.02);
     }
 
-    /* Sticky Footer */
+    /* Mobile Responsiveness */
+    @media (max-width: 600px) {
+      .image-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Sticky Footer with extra bottom padding */
     footer {
-      background: #2a9d8f;
+      background: #264653;
       color: white;
       text-align: center;
-      padding: 15px;
+      padding: 40px 20px 80px; /* Extra bottom padding to avoid overlap */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
     footer p {
       margin: 5px 0;
@@ -128,7 +146,7 @@
       </div>
       <div class="header-text">
         <h1>DataHub (Chronos) Release Notes</h1>
-        <p>Date: July 15, 2025 | Commit: d5ae6f71eac1030ae063b88f1754a52163bd</p>
+        <p>Date: July 15, 2025 | Commit: d5ae6f7</p>
         <p>Company: Financial Fabric</p>
       </div>
     </div>
@@ -141,7 +159,7 @@
       <li>Save View Fix – DataDice Page</li>
     </ul>
 
-    <h3>1. Analytic Bot Integration in DataPivot Page</h3>
+    <h3>1. Analytics Bot Integration in DataPivot Page</h3>
     <p>
       An <b>Analytics Bot</b> has been integrated into the DataPivot page to assist users with 
       data exploration, insights, and contextual recommendations.
@@ -152,13 +170,25 @@
     </p>
 
     <div class="image-grid">
-      <img src="image1.png" alt="Bot Integration Step 1">
-      <img src="image2.png" alt="Bot Integration Step 2">
-      <img src="image3.png" alt="Bot Integration Step 3">
-      <img src="image4.png" alt="Bot Integration Step 4">
+      <div>
+        <img src="image1.png" alt="Bot Integration Step 1">
+        <p style="text-align:center;font-size:12px;">Step 1: Open DataPivot Page</p>
+      </div>
+      <div>
+        <img src="image2.png" alt="Bot Integration Step 2">
+        <p style="text-align:center;font-size:12px;">Step 2: Click 'Ask DataHub'</p>
+      </div>
+      <div>
+        <img src="image3.png" alt="Bot Integration Step 3">
+        <p style="text-align:center;font-size:12px;">Step 3: Enter Query</p>
+      </div>
+      <div>
+        <img src="image4.png" alt="Bot Integration Step 4">
+        <p style="text-align:center;font-size:12px;">Step 4: View Insights</p>
+      </div>
     </div>
 
-    <p><i>A result will appear:</i></p>
+    <p><i>An example result is shown below.</i></p>
 
     <h3>2. Save View Fix – DataDice Page</h3>
     <p>
@@ -169,7 +199,7 @@
   </div>
 
   <footer>
-    <p>Please contact us if you would like any further details or a demo.</p>
+    <p>For more details or to schedule a demo, please contact us.</p>
     <a href="mailto:datascience@financialfabric.com?subject=Request%20a%20Demo&body=Hi%20Team,%0AI%20would%20like%20to%20request%20a%20demo%20for%20DataHub%20(Chronos).%0AThanks," 
        class="button">Request a Demo</a>
   </footer>
